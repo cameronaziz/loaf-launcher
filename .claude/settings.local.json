@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git clone *)",
+      "Bash(openssl rand *)",
+      "Bash(psql --version)",
+      "Bash(redis-cli --version)",
+      "Bash(temporal --version)",
+      "Bash(pnpm --version)",
+      "Bash(brew install *)",
+      "Bash(createdb postiz-db-local *)",
+      "Bash(psql postgres *)",
+      "Bash(pnpm approve-builds *)",
+      "Bash(pnpm run *)",
+      "Bash(grep -r \"instagram\" /Users/cameronaziz/rozzy/loaf-launcher/libraries --include=\"*.ts\" ! -path \"*/node_modules/*\" -l)",
+      "Bash(grep -E \"\\\\.\\(tsx|ts\\)$\")",
+      "WebFetch(domain:northflank.com)",
+      "Bash(npm list *)",
+      "Bash(npx northflank *)"
+    ]
+  }
+}

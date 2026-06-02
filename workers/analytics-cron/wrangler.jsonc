@@ -1,0 +1,14 @@
+{
+  "name": "postiz-analytics-cron",
+  "main": "src/index.ts",
+  "compatibility_date": "2024-01-01",
+  "triggers": {
+    "crons": [
+      "*/5 8-23 * * *",
+      "0 0-7 * * *"
+    ]
+  },
+  "vars": {
+    "BACKEND_URL": "https://your-backend-url.northflank.app"
+  }
+}
