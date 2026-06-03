@@ -287,7 +287,8 @@ export const Filters = () => {
   }, [calendar]);
 
   return (
-    <div className="text-textColor flex flex-col md:flex-row gap-[8px] items-center select-none">
+    <div className="text-textColor flex flex-col gap-[8px] select-none">
+      <div className="flex flex-wrap gap-[8px] items-center">
       {!isListView && (
         <div className="flex flex-grow flex-row items-center gap-[10px]">
           <div className="border h-[42px] border-newTableBorder bg-newTableBorder gap-[1px] flex items-center rounded-[8px] overflow-hidden">
@@ -311,8 +312,8 @@ export const Filters = () => {
                 />
               </svg>
             </div>
-            <div className="min-w-[200px] text-center bg-newBgColorInner h-full flex items-center justify-center">
-              <div className="py-[3px] px-[9px] rounded-[5px] transition-all text-[14px]">
+            <div className="min-w-[140px] md:min-w-[200px] text-center bg-newBgColorInner h-full flex items-center justify-center">
+              <div className="py-[3px] px-[9px] rounded-[5px] transition-all text-[12px] md:text-[14px]">
                 {getDisplayText()}
               </div>
             </div>
@@ -337,7 +338,7 @@ export const Filters = () => {
               </svg>
             </div>
           </div>
-          <div className="flex-1 text-[14px] font-[500]">
+          <div className="text-[14px] font-[500]">
             <div className="text-center flex h-[42px]">
               <div
                 onClick={setToday}

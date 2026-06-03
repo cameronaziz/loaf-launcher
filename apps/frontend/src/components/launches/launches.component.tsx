@@ -499,7 +499,7 @@ export const LaunchesComponent = () => {
       <CalendarWeekProvider integrations={sortedIntegrations}>
         <div
           className={clsx(
-            'flex relative flex-col',
+            'hidden md:flex relative flex-col',
             collapseMenu === '1' ? 'group sidebar w-[100px]' : 'w-[260px]'
           )}
         >
@@ -592,9 +592,9 @@ export const LaunchesComponent = () => {
             </div>
           </div>
         </div>
-        <div className="bg-newBgColorInner flex-1 flex-col flex p-[20px] gap-[12px]">
+        <div className="bg-newBgColorInner flex-1 flex-col flex p-[12px] md:p-[20px] gap-[12px] min-w-0">
           <Filters />
-          <div className="flex-1 flex">
+          <div className="flex-1 flex min-h-0">
             <Calendar />
           </div>
         </div>
