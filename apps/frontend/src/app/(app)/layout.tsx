@@ -6,7 +6,7 @@ import 'react-tooltip/dist/react-tooltip.css';
 import '@copilotkit/react-ui/styles.css';
 import LayoutContext from '@gitroom/frontend/components/layout/layout.context';
 import { ReactNode } from 'react';
-import { Plus_Jakarta_Sans } from 'next/font/google';
+import { Plus_Jakarta_Sans, Quicksand } from 'next/font/google';
 import PlausibleProvider from 'next-plausible';
 import clsx from 'clsx';
 import { VariableContextComponent } from '@gitroom/react/helpers/variable.context';
@@ -26,9 +26,16 @@ import Script from 'next/script';
 import { ChangeDirClient } from '@gitroom/frontend/components/new-layout/change.dir.client';
 
 const jakartaSans = Plus_Jakarta_Sans({
-  weight: ['600', '500'],
+  weight: ['400', '500', '600', '700'],
   style: ['normal', 'italic'],
   subsets: ['latin'],
+  variable: '--font-jakarta',
+});
+
+const quicksand = Quicksand({
+  weight: ['600', '700'],
+  subsets: ['latin'],
+  variable: '--font-quicksand',
 });
 
 export default async function AppLayout({ children }: { children: ReactNode }) {
@@ -52,7 +59,7 @@ export default async function AppLayout({ children }: { children: ReactNode }) {
       </head>
       <ChangeDirClient />
       <body
-        className={clsx(jakartaSans.className, 'dark text-primary !bg-primary')}
+        className={clsx(jakartaSans.variable, quicksand.variable, jakartaSans.className, 'dark text-primary !bg-primary')}
       >
         <VariableContextComponent
           storageProvider={
