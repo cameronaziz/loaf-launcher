@@ -86,7 +86,7 @@ export class AnalyticsService {
 
     if (dayjs(integration.tokenExpiration).isBefore(dayjs())) {
       const refreshed = await this._refreshIntegrationService.refresh(integration as any);
-      if (!refreshed?.accessToken) {
+      if (!refreshed || refreshed === false || !('accessToken' in refreshed) || !refreshed.accessToken) {
         this.logger.warn(`Token refresh failed for integration ${integration.id}`);
         return { synced: 0, skipped: 0 };
       }
@@ -128,7 +128,7 @@ export class AnalyticsService {
         const metrics = data.flatMap((d) =>
           d.data.map((point) => ({
             metric: d.label,
-            value: point.total,
+            value: Number(point.total),
           }))
         );
 
