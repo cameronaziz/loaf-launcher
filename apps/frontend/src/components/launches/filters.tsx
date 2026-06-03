@@ -436,7 +436,7 @@ export const Filters = () => {
         <div className="flex flex-row p-[4px] border border-newTableBorder rounded-[8px] text-[14px] font-[500]">
           <div
             className={clsx(
-              'pt-[6px] pb-[5px] cursor-pointer w-[74px] text-center rounded-[6px]',
+              'pt-[6px] pb-[5px] cursor-pointer w-[58px] md:w-[74px] text-center rounded-[6px] text-[12px] md:text-[14px]',
               calendar.display === 'day' && 'text-textItemFocused bg-boxFocused'
             )}
             onClick={setDay}
@@ -445,7 +445,7 @@ export const Filters = () => {
           </div>
           <div
             className={clsx(
-              'pt-[6px] pb-[5px] cursor-pointer w-[74px] text-center rounded-[6px]',
+              'pt-[6px] pb-[5px] cursor-pointer w-[58px] md:w-[74px] text-center rounded-[6px] text-[12px] md:text-[14px]',
               calendar.display === 'week' && 'text-textItemFocused bg-boxFocused'
             )}
             onClick={setWeek}
@@ -454,7 +454,7 @@ export const Filters = () => {
           </div>
           <div
             className={clsx(
-              'pt-[6px] pb-[5px] cursor-pointer w-[74px] text-center rounded-[6px]',
+              'pt-[6px] pb-[5px] cursor-pointer w-[58px] md:w-[74px] text-center rounded-[6px] text-[12px] md:text-[14px]',
               calendar.display === 'month' && 'text-textItemFocused bg-boxFocused'
             )}
             onClick={setMonth}
@@ -512,6 +512,7 @@ export const Filters = () => {
             />
           </svg>
         </div>
+      </div>
       </div>
     </div>
   );

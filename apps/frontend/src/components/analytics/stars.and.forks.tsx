@@ -12,8 +12,8 @@ export const StarsAndForks: FC<StarsAndForksInterface> = (props) => {
   return (
     <>
       {list.map((item) => (
-        <div className="flex gap-[24px] h-[272px]" key={item.login}>
-          <div className="flex-1 bg-secondary py-[10px] px-[16px] flex flex-col">
+        <div className="flex flex-col md:flex-row gap-[24px] md:h-[272px]" key={item.login}>
+          <div className="flex-1 bg-secondary py-[10px] px-[16px] flex flex-col min-h-[200px] md:min-h-0">
             <div className="flex items-center gap-[14px]">
               <div className="bg-fifth p-[8px]">
                 <svg
@@ -100,7 +100,7 @@ export const StarsAndForks: FC<StarsAndForksInterface> = (props) => {
           </div>
         </div>
       ))}
-      <div className="flex gap-[24px]">
+      <div className="flex flex-col md:flex-row gap-[24px]">
         {[0, 1].map((p) => (
           <div
             key={p}

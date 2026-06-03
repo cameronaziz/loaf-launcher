@@ -201,9 +201,9 @@ export const StarsTableComponent = () => {
           )}
         </div>
       </div>
-      <div className="flex-1 bg-secondary">
+      <div className="flex-1 bg-secondary overflow-x-auto">
         {stars?.stars?.length ? (
-          <table className={`table1`}>
+          <table className={`table1 min-w-[600px]`}>
             <thead>
               <tr>
                 <th>

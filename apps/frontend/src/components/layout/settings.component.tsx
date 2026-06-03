@@ -117,7 +117,7 @@ export const SettingsPopup: FC<{
 
   return (
     <>
-      <div className="bg-newBgColorInner p-[20px] flex flex-col transition-all w-[260px]">
+      <div className="hidden md:flex bg-newBgColorInner p-[20px] flex-col transition-all w-[260px]">
         <div className="flex flex-1 flex-col gap-[15px]">
           {list.map(({ tab: tabKey, label }) => (
             <div
@@ -148,7 +148,29 @@ export const SettingsPopup: FC<{
           )}
         </div>
       </div>
-      <div className="bg-newBgColorInner flex-1 flex-col flex p-[20px] gap-[12px]">
+      {/* Mobile tab selector */}
+      <div className="md:hidden flex overflow-x-auto gap-[8px] px-[12px] py-[8px] bg-newBgColorInner border-b border-newBorder scrollbar-none">
+        {list.map(({ tab: tabKey, label }) => (
+          <button
+            key={tabKey}
+            className={clsx(
+              'whitespace-nowrap px-[12px] py-[6px] rounded-[8px] text-[13px] font-[500] transition-colors',
+              tabKey === tab
+                ? 'bg-boxFocused text-textItemFocused'
+                : 'text-textItemBlur hover:bg-boxHover'
+            )}
+            onClick={() => setTab(tabKey)}
+          >
+            {label}
+          </button>
+        ))}
+        {showLogout && (
+          <div className="flex items-center">
+            <LogoutComponent />
+          </div>
+        )}
+      </div>
+      <div className="bg-newBgColorInner flex-1 flex-col flex p-[12px] md:p-[20px] gap-[12px]">
         <FormProvider {...form}>
           <form onSubmit={form.handleSubmit(submit)}>
             {!!getRef && (

@@ -171,10 +171,28 @@ export const PlatformAnalytics = () => {
     );
   }
   return (
-    <>
+    <div className="flex flex-col md:flex-row flex-1 min-w-0">
+      {/* Mobile channel selector — shown only on small screens */}
+      <div className="md:hidden bg-newBgColorInner px-[16px] py-[12px] border-b border-newBorder">
+        <select
+          className="w-full h-[44px] rounded-[12px] bg-newBgColor border border-newBorder px-[12px] text-[14px] text-newTextColor outline-none"
+          value={current}
+          onChange={(e) => {
+            setRefresh(true);
+            setTimeout(() => setRefresh(false), 10);
+            setCurrent(Number(e.target.value));
+          }}
+        >
+          {sortedIntegrations.map((integration, index) => (
+            <option key={integration.id} value={index}>
+              {integration.name}
+            </option>
+          ))}
+        </select>
+      </div>
       <div
         className={clsx(
-          'bg-newBgColorInner p-[20px] flex flex-col gap-[15px] transition-all',
+          'hidden md:flex bg-newBgColorInner p-[20px] flex-col gap-[15px] transition-all',
           collapseMenu === '1' ? 'group sidebar w-[100px]' : 'w-[260px]'
         )}
       >
@@ -298,6 +316,6 @@ export const PlatformAnalytics = () => {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 };
