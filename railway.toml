@@ -2,4 +2,4 @@
   dockerfilePath = "Dockerfile.dev"
 
 [deploy]
-  startCommand = "nginx && pnpm run pm2"
+  startCommand = "cp /app/var/docker/nginx.railway.conf /etc/nginx/nginx.conf && nginx && pnpm run pm2"
