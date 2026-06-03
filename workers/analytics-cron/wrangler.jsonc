@@ -1,5 +1,5 @@
 {
-  "name": "postiz-analytics-cron",
+  "name": "sniffs",
   "main": "src/index.ts",
   "compatibility_date": "2024-01-01",
   "triggers": {
@@ -9,6 +9,6 @@
     ]
   },
   "vars": {
-    "BACKEND_URL": "https://your-backend-url.northflank.app"
+    "BACKEND_URL": "https://http--fetch--5p8s8p65vwm5.code.run"
   }
 }

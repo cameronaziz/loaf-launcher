@@ -41,6 +41,7 @@ import { AnalyticsSyncController } from '@gitroom/backend/api/routes/analytics.s
 import { AuthProviderManager } from '@gitroom/backend/services/auth/providers/providers.manager';
 import { GithubProvider } from '@gitroom/backend/services/auth/providers/github.provider';
 import { GoogleProvider } from '@gitroom/backend/services/auth/providers/google.provider';
+import { ZohoProvider } from '@gitroom/backend/services/auth/providers/zoho.provider';
 import { FarcasterProvider } from '@gitroom/backend/services/auth/providers/farcaster.provider';
 import { WalletProvider } from '@gitroom/backend/services/auth/providers/wallet.provider';
 import { OauthProvider } from '@gitroom/backend/services/auth/providers/oauth.provider';
@@ -95,6 +96,7 @@ const authenticatedController = [
     AuthProviderManager,
     GithubProvider,
     GoogleProvider,
+    ZohoProvider,
     FarcasterProvider,
     WalletProvider,
     OauthProvider,

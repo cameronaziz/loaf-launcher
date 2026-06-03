@@ -11,6 +11,7 @@ import { LoginUserDto } from '@gitroom/nestjs-libraries/dtos/auth/login.user.dto
 import { GithubProvider } from '@gitroom/frontend/components/auth/providers/github.provider';
 import { OauthProvider } from '@gitroom/frontend/components/auth/providers/oauth.provider';
 import { GoogleProvider } from '@gitroom/frontend/components/auth/providers/google.provider';
+import { ZohoProvider } from '@gitroom/frontend/components/auth/providers/zoho.provider';
 import { useVariables } from '@gitroom/react/helpers/variable.context';
 import { FarcasterProvider } from '@gitroom/frontend/components/auth/providers/farcaster.provider';
 import WalletProvider from '@gitroom/frontend/components/auth/providers/wallet.provider';
@@ -80,6 +81,7 @@ export function Login() {
             ) : (
               <div className="gap-[8px] flex">
                 <GoogleProvider />
+                <ZohoProvider />
                 {!!neynarClientId && <FarcasterProvider />}
                 {billingEnabled && <WalletProvider />}
               </div>
